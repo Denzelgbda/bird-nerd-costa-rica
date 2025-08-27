@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Bird Nerd · Costa Rica</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 11l6-6 6 6-6 6-6-6Z" stroke="#35c48d" stroke-width="2"/><path d="M15 11l6 6" stroke="#35c48d" stroke-width="2"/></svg>
+      Bird Nerd · Costa Rica
+    </div>
+    <div class="searchbar">
+      <input id="q" class="input" placeholder="Zoek NL/EN/ES/Latijn of familie…" />
+      <select id="family" class="select">
+        <option value="">Alle families</option>
+      </select>
+      <button id="filter-spotted" class="chip-btn" aria-pressed="false">Alle soorten</button>
+    </div>
+    <div class="small" id="counts"></div>
+  </header>
+
+  <main id="grid" class="grid"></main>
+  <div id="sentinel" style="height:1px"></div>
+
+  <div id="sheet" class="sheet" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="backdrop" data-close></div>
+    <div class="panel">
+      <div class="handle" data-close></div>
+      <div class="content">
+        <div class="hero"><img id="detail-img" class="thumb" alt="" /></div>
+        <h2 id="detail-name" style="margin:10px 0 4px 0"></h2>
+        <div class="row">
+          <span class="pill" id="detail-latin"></span>
+          <span class="pill" id="detail-es"></span>
+          <span class="pill" id="detail-family"></span>
+        </div>
+        <div class="kv">
+          <div><b>Status</b></div><div id="detail-status">—</div>
+          <div><b>Waargenomen</b></div><div id="detail-seen">—</div>
+        </div>
+      </div>
+      <div class="footer-actions">
+        <input type="file" id="upload" accept="image/*" style="display:none" />
+        <button class="btn" id="btn-upload">Eigen foto</button>
+        <button class="btn primary" id="btn-toggle">Markeer gezien</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
